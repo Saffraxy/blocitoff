@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
+
   def show
-    if params[:id].present?
-      @user = User.find(params[:id])
-    else
       @user = current_user
-    end
+## Not sure how to address this requirement
+###Modify UsersController to provide the requisite instance variable to users#show
+    #  @items = @user.items
+    #  @items = Item.all
+      @items = @user.items
   end
 end
