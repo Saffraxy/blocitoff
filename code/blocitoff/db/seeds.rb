@@ -5,3 +5,25 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'random_data'
+
+#Create Users
+5.times do
+  User.create!(
+    email: RandomData.random_email,
+    password: RandomData.random_sentence,
+  )
+end
+users = User.all
+
+#create items;
+20.times do
+  Item.create!(
+  user: users.sample,
+  title: RandomData.random_sentence
+  )
+end
+items = Item.all
+
+puts "Seed Finished"
+puts "#{Item.count} items created"
