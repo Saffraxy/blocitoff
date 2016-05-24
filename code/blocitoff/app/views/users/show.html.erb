@@ -4,15 +4,20 @@
     <div class="media">
       <br />
       <div class="media-body">
-        <h2 class="media-heading"><%= @user.email %>'s checklist: </h2)
+        <h2 class="media-heading"><%= @user.email %>'s checklist: </h2>
         <small>
           <div class='js-items-count'><%= pluralize(@user.items.count, 'item') %></div>
         </small>
         <div>
         <h3>Items</h3>
-        <div class='js-items'>
+        <table class="table table-striped">
+          <tr class="js-items">
+            <th>To do</th>
+            <th>Expires</th>
+            <th></th>
+          </tr>
           <%= render @user.items %>
-        </div>
+        </table>
         </div>
         <% if current_user %>
         <div class='new-item'>

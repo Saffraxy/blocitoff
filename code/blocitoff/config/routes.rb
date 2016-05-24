@@ -16,6 +16,8 @@ Rails.application.routes.draw do
       resources :items, only: [:create]
   end
 
+  resources :items
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,8 +1,5 @@
-<div class="media">
-  <div class="media-body">
-  <small>
-      <%= item.user.name %> created <%= time_ago_in_words(item.created_at) %> ago
-  </small>
-    <p><%= item.name %></p>
-  </div>
-</div>
+<tr>
+  <td><%= item.name %></td>
+  <td><%= time_ago_in_words(item.created_at) %></td>
+  <td>button</td>
+</tr>

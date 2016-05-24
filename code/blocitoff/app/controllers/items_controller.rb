@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  before_action :require_sign_in
 
   def index
     @items = Item.all
