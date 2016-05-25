@@ -9,10 +9,12 @@ require 'random_data'
 
 #Create Users
 5.times do
-  User.create!(
-    email: RandomData.random_email,
-    password: RandomData.random_sentence,
+  user = User.new(
+    email: Faker::Internet.email,
+    password: Faker::Lorem.characters(10)
   )
+  user.skip_confirmation!
+  user.save!
 end
 users = User.all
 
@@ -20,10 +22,9 @@ users = User.all
 20.times do
   Item.create!(
   user: users.sample,
-  name: RandomData.random_sentence
+  name: Faker::Lorem.sentence
   )
 end
-items = Item.all
 
 puts "Seed Finished"
 puts "#{Item.count} items created"
