@@ -1,5 +1,5 @@
 <tr>
   <td><%= item.name %></td>
   <td><%= time_ago_in_words(item.created_at) %></td>
-  <td>button</td>
+  <td><%= link_to "", item, method: :delete, remote: true, class: 'glyphicon glyphicon-ok'%></td>
 </tr>
